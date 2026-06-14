@@ -1,0 +1,115 @@
+#collection is a single "variable" used to store multiple values.
+#List[] = Ordered, Mutable, Allows Duplicates
+#Tuple() = Ordered, Immutable, Allows Duplicates. Faster than list. (slightly more memory-efficient)
+#Set{} = Unordered, Mutable, No Duplicates.
+#Dictionary{} = Ordered, Mutable, Unique keys preferred(values can be duplicate). Stores data in key-value pairs.
+#frozenset{} = Unordered, Immutable, No Duplicates. Immutable version of Set.
+
+#IMPORTANT NOTE1: Even though sets and frozensets are unordered, if they contain mutable elements (like lists or dictionaries), those elements can be mutated. 
+#However, the overall structure of the set or frozenset itself cannot be changed (i.e., you cannot add or remove elements from it).
+
+#IMPORTANT NOTE2: In Python 3.7 and later, dictionaries maintain the order of insertion. 
+#However, they are still considered unordered collections because their primary purpose is to store key-value pairs,
+# and the order of keys is not guaranteed in all operations.
+
+#syntax
+# List       -> []
+# Tuple      -> ()
+# Set        -> {1, 2, 3}
+# Empty Set  -> set()
+# Dictionary -> {"key": "value"}
+# Frozenset  -> frozenset(iterable)
+
+#---------------------------------------------------
+#----------------------[LIST]-----------------------
+#---------------------------------------------------
+
+fruits = ["apple", "banana", "cherry"]  # initializing a list
+print(fruits)  # Output: ['apple', 'banana', 'cherry']
+print(type(fruits))  # Output: <class 'list'>  
+print(fruits[0])  # Output: apple
+print(fruits[1])  # Output: banana
+print(fruits[2])  # Output: cherry
+print(fruits[-1]) # Output: cherry
+print(fruits[-2]) # Output: banana
+print(fruits[-3]) # Output: apple
+print(fruits[0:2])  # Output: ['apple', 'banana']
+print(fruits[1:])   # Output: ['banana', 'cherry'] 
+print(fruits[:2])   # Output: ['apple', 'banana']
+print(fruits[:])    # Output: ['apple', 'banana', 'cherry']
+
+fruits[0] = "orange"  # Modifying the first element of the list
+print(fruits)  # Output: ['orange', 'banana', 'cherry']
+
+fruits.append("grape")  # Adding a new element to the end of the list
+print(fruits)  # Output: ['orange', 'banana', 'cherry', 'grape']
+
+fruits.insert(1, "kiwi")  # Inserting an element at index 1
+print(fruits)  # Output: ['orange', 'kiwi', 'banana', 'cherry', 'grape']
+
+fruits.remove("banana")  # Removing the first occurrence of "banana"
+print(fruits)  # Output: ['orange', 'kiwi', 'cherry', 'grape']
+
+fruits.pop()  # Removing and returning the last element
+print(fruits)  # Output: ['orange', 'kiwi', 'cherry']
+
+fruits.reverse()  # Reversing the list
+print(fruits)  # Output: ['cherry', 'kiwi', 'orange']
+
+fruits.index("kiwi")  # Finding the index of "kiwi"
+print(fruits.index("kiwi"))  # Output: 1
+
+fruits.count("orange")  # Counting the occurrences of "orange"
+print(fruits.count("orange"))  # Output: 1
+
+fruits.clear()  # Removing all elements from the list
+print(fruits)  # Output: []
+
+fruits = ["apple", "banana", "cherry"]  # Reinitializing the list
+print(fruits.__sizeof__())  # Displaying the memory size of the list
+
+fruits_copy = fruits.copy()  # Creating a copy of the list
+print(fruits_copy)  # Output: ['apple', 'banana', 'cherry']
+
+print(dir(fruits))  # Displaying the attributes and methods of the list
+
+fruits.extend(["grape", "kiwi"])  # Extending the list with another list
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'grape', 'kiwi']
+
+fruits.sort()  # Sorting the list in ascending order
+print(fruits)  # Output: ['apple', 'banana', 'cherry', 'grape', 'kiwi']
+
+fruits.sort(reverse=True)  # Sorting the list in descending order
+print(fruits)  # Output: ['kiwi', 'grape', 'cherry', 'banana', 'apple']
+
+fruits.sort(key=len)  # Sorting the list based on the length of the elements
+print(fruits)  # Output: ['kiwi', 'grape', 'apple', 'banana', 'cherry']
+
+fruits.sort(key=len, reverse=True)  # Sorting the list based on the length of the elements in descending order
+print(fruits)  # Output: ['banana', 'cherry', 'grape',
+
+fruits.sort(key=lambda x: x[-1])  # Sorting the list based on the last character of the elements
+print(fruits)  # Output: ['banana', 'grape', 'apple', 'cherry', 'kiwi']
+
+fruits.sort(key=lambda x: x[-1], reverse=True)  # Sorting the list based on the last character of the elements in descending order
+print(fruits)  # Output: ['kiwi', 'cherry', 'apple', 'grape', 'banana']
+
+fruits__formatted = [fruit.upper() for fruit in fruits]  # Using list comprehension to create a new list with uppercase elements
+print(fruits__formatted)  # Output: ['KIWI', 'CHERRY', 'APPLE', 'GRAPE', 'BANANA']
+
+fruits__formatted = [fruit.lower() for fruit in fruits]  # Using list comprehension to create a new list with lowercase elements
+print(fruits__formatted)  # Output: ['kiwi', 'cherry', 'apple', 'grape', 'banana']
+
+fruits__formatted = [fruit.capitalize() for fruit in fruits]  # Using list comprehension to create a new list with capitalized elements
+print(fruits__formatted)  # Output: ['Kiwi', 'Cherry', 'Apple', 'Grape', 'Banana']
+
+print(fruits.index("apple"))  # Output: 2
+
+#---------------------------------------------------
+#----------------------[LIST]-----------------------
+#---------------------------------------------------
+
+
+#----------------------------------------------------
+#----------------------(TUPLE)-----------------------
+#----------------------------------------------------

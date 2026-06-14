@@ -1,0 +1,46 @@
+#array in python - 
+# collection of elements that can accessed through its index
+#dynamic(no need to define data type or the amount of elements that can be added inside the array),
+#mutable(elements inside the array can be changed)
+
+#printing an empty array
+array =[]
+print (array)
+
+#indexing in array - starts from 0, negative indexing starts from -1
+array_1 = [1,2,3,4,5] #initializing an array with 5 elements
+print(array_1)
+print(type(array_1)) #displays the type of the variable, in this case it is a list
+print(array_1[0])  # Output: 1
+print(array_1[2])  # Output: 3
+print(array_1[-1]) # Output: 5
+#print(dir(array_1)) #displays the attributes and methods that can be used with the array
+#print(help(array_1)) #displays the methods that can be used with the array
+print(len(array_1)) #displays the length of the array
+print(array_1.copy()) #creates a copy of the array
+print(array_1.count(2)) #counts the number of occurrences of the element 2 in the array
+print(array_1.index(3)) #displays the index of the first occurrence of the element 3 in the array
+print(array_1.reverse()) #reverses the array
+print(array_1) # Output: [5, 4, 3, 2, 1]
+print(array_1.append(6)) #adds the element 6 at the end of the array 
+print(array_1) # Output: [5, 4, 3, 2, 1, 6]
+print(array_1.insert(0,0)) #inserts the element 0 at index 0
+print(array_1) # Output: [0, 5, 4, 3, 2, 1, 6]
+print(array_1.remove(3)) #removes the first occurrence of the element 3
+print(array_1) # Output: [0, 5, 4, 2, 1, 6]
+print(array_1.pop()) #removes and returns the last element of the array
+print(array_1) # Output: [0, 5, 4, 2, 1]
+print(array_1.pop(0)) #removes and returns the element at index 0
+print(array_1) # Output: [5, 4, 2, 1]
+print(array_1.clear()) #removes all the elements from the array
+print(array_1) # Output: []
+print(array_1.__sizeof__()) #displays the memory size of the array
+
+#slicing in array - extracting a portion of the array
+array_2 = ["apple", "banana", "cherry"]
+print(array_2)
+print(array_2[0:2])  # Output: ['apple', 'banana']
+print(array_2[1:])   # Output: ['banana', 'cherry']
+print()
+
+
