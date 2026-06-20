@@ -1,0 +1,10 @@
+# Define - A function is a reusable piece of code that can be used multiple times. 
+# It takes some input, processes it, and returns an output.
+# USE - Functions help to break down complex problems into smaller, more manageable pieces.
+# They also help to avoid code duplication and make the code more organized and easier to read.
+
+def greet(name): 
+        # Define a function named greet that takes one parameter i.e name. This is a user-defined function.It is defined using the keyword 'def'.
+        print("Hello", name) 
+
+greet("Harshita") #Calling the function greet and passing the argument "Harshita". This will print "Hello Harshita" to the console.

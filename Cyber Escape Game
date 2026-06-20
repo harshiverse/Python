@@ -1,0 +1,79 @@
+#-------CYBER ESCAPE GAME-------#
+
+# This is a simple text-based adventure game where the player must navigate through a series of choices to escape from a cyber attack.
+# The player will be presented with different scenarios and must choose the correct actions to successfully escape.
+
+#Section 1: Variables and Strings
+from glob import escape
+
+
+game_title = "Welcome to the Cyber Escape Game!"
+print("\n" + "="*150 + "\n")
+print(game_title)
+player_name = input("Please enter your name: ")
+
+print("\n" + "-"*150 + "\n")  # This will print a separator line for better readability
+print(f"Hello, {player_name}! You find yourself trapped in a virtual world controlled by hackers. Your mission is to escape before they can capture you.")
+print("\n" + "-"*150 + "\n")
+
+
+#Section 2: If Statements and User Input
+def first_choice():
+    print("You see two paths ahead of you. Do you choose to go left or right?")
+    choice = input("Type 'left' or 'right': ").lower()
+    
+    if choice == "left":
+        print("\nYou encounter a firewall. Do you try to hack it or look for another way around?")
+        second_choice()
+    elif choice == "right":
+        print("\nYou find a hidden backdoor. Do you enter it or keep searching?")
+        third_choice()
+    else:
+        print("\nInvalid choice. Please try again.")
+        first_choice()  
+
+def second_choice():
+    choice = input("Type 'hack' or 'look': ").lower()
+    
+    if choice == "hack":
+        print("\nYou successfully hack the firewall and continue on your path.")
+        escape()
+    elif choice == "look":
+        print("\nYou find a hidden passage that leads you to safety.")
+        escape()
+    else:
+        print("\nInvalid choice. Please try again.")
+        second_choice() 
+
+def third_choice():
+    choice = input("Type 'enter' or 'search': ").lower()
+    
+    if choice == "enter":
+        print("\nYou enter the backdoor and find yourself in a safe zone. You have escaped!")
+        escape()
+    elif choice == "search":
+        print("\nYou keep searching and eventually find a hidden exit that leads you to safety.")
+        escape()
+    else:
+        print("\nInvalid choice. Please try again.")
+        third_choice()
+
+#Section 3: Loops and Functions
+def escape():
+    print("\nCongratulations, " + player_name + "! You have successfully escaped the cyber attack.")
+    play_again = input("Do you want to play again? (yes/no): ").lower()
+    
+    if play_again == "yes":
+        first_choice()
+    elif play_again == "no":
+        print("\nThank you for playing the Cyber Escape Game! Goodbye!")
+    else:
+        print("\nInvalid choice. Please try again.")
+        escape()
+
+first_choice()  # Start the game by calling the first choice function
+
+
+
+
+
