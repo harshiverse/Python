@@ -38,25 +38,25 @@ fish.hunt() # fish inherit from both the classes and can do both flee and hunt
 
 
 #-------------Multi-level Inheritance---------------
-class Animal:
+class Animal: #grandparent
     def eat(self): #All animals need to eat
         print("This animal is eating...")
 
     def sleep(self):
         print("This animal is sleeping...")
 
-class Preyy(Animal):
+class Preyy(Animal): #parent
     def fleee(self):
         print("This animal is fleeing...")
 
-class Predatorr(Animal):
+class Predatorr(Animal): #parent
     def huntt(self):
         print("This animal is hunting...")
 
-class Deer(Preyy):
+class Deer(Preyy): #child
     pass
 
-class Lion(Predatorr):
+class Lion(Predatorr): #child
     pass
 
 lion = Lion ()
